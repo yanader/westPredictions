@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+
+<form action="/privateleagues" method="post">
+    <input name="prediction_id" type="hidden" value="1">
+    <select class="btn btn-secondary btn-sm dropdown-toggle" name="selectedleague">
+        <option value=0 selected disabled hidden>Select a league</option>
+        {% for league in leagues %}
+            <option value="{{league['leagueid']}}">{{league['name']}}</option>
+        {% endfor %}
+    </select>
+    <button type="submit" class="btn btn-secondary btn-sm">Submit</button>
+  </form>
+
+<br>
+
+{% if filtered_league %}
+<h3>{{leaguename}}</h3>
+<table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">username</th>
+        <th scope="col"># predictions</th>
+        <th scope="col">% predictions</th>
+        <th scope="col"># correct</th>
+        <th scope="col">% correct</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for username in filtered_league %}
+      <tr>
+        <td>{{username['username']}}</td>
+        <td>{{username['predictions']}} / {{ matches }}</td>
+        <td>{{username['Predictions made']  | percent_format}}</td>
+        <td>{{username['correct']}}</td>
+        <td>{{username['Correct %'] | percent_format}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endif %}
+
+{% endblock %}

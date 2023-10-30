@@ -1,0 +1,39 @@
+.jumbotron {
+    background-color: #505050;
+    color: #FFA0A7;
+}
+
+footer {
+    color: #FFA0A7;
+}
+
+main {
+    color: #FFA0A7;
+}
+
+body {
+    background-color: #606060;
+}
+
+.nav {
+    background-color: #505050;
+}
+
+a{
+    color: #FFA0A7 !important;
+    text-decoration:none;
+}
+
+a:hover {
+   color: #505050 !important;
+   background-color: #FFA0A7 !important;
+}
+
+.btn {
+    background-color: #FFA0A7
+}
+
+.btn:hover {
+    background-color: #505050;
+    color: #FFA0A7;
+}

@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Leagues
+{% endblock %}
+
+{% block main %}
+<table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">username</th>
+        <th scope="col"># predictions</th>
+        <th scope="col">% predictions</th>
+        <th scope="col"># correct</th>
+        <th scope="col">% correct</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for username in league %}
+      <tr>
+        <td>{{username['username']}}</td>
+        <td>{{username['predictions']}} / {{ matches }}</td>
+        <td>{{username['Predictions made']  | percent_format}}</td>
+        <td>{{username['correct']}}</td>
+        <td>{{username['Correct %'] | percent_format}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+{% endblock %}

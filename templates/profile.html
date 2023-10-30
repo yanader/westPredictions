@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+
+    <form action="/changepassword" method="post">
+        <div class="mb-3">
+            <h4>Change your password</h4>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="password" name="oldpassword" placeholder="Old Password" type="password">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="password" name="newpassword" placeholder="New Password" type="password">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="password" name="confirmednewpassword" placeholder="Confirm password" type="password">
+        </div>
+        <button class="btn" type="submit">Change</button>
+    </form>
+
+<br>
+
+<div class="span6">
+    <form action="/createleague" method="post">
+        <div class="mb-3">
+            <h4>Create a league</h4>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="league" name="leaguename" placeholder="League Name" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="league" name="joiningcode" placeholder="Joining Code" type="text">
+        </div>
+        <button class="btn" type="submit">Create</button>
+    </form>
+</div>
+
+<br>
+
+<div class="span6">
+    <form action="/joinleague" method="post">
+        <div class="mb-3">
+            <h4>Join a league</h4>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="league" name="leaguename" placeholder="League Name" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="league" name="joiningcode" placeholder="Joining Code" type="text">
+        </div>
+        <button class="btn" type="submit">Join</button>
+    </form>
+</div>
+
+{% endblock %}
